@@ -16,7 +16,7 @@ analysis of historic nypd crime complaints
    | Source | NYPD Complaint Data Historic (NYC Open Data) |
    | Original Format | CSV |
    | Imported Format | CSV |
-   | Total Rows | 1 |
+   | Total Rows | 9.5M |
    | Total Columns | 35 |
    | Date Range | January 1, 1989 - December 31, 2024 |
    
