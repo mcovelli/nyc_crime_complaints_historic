@@ -4,9 +4,9 @@ Analysis of NYC Crime trends, Borough comparisons and offense types
 ### Work in progress...
 
 ## Data Cleaning Log  
-**Project:** NYPD Crime Complaints
-**Dataset:** NYPD Complaint Data Historic (NYC Open Date)
-**Tool:** Python/Pandas
+**Project:** NYPD Crime Complaints  
+**Dataset:** NYPD Complaint Data Historic (NYC Open Date)  
+**Tool:** Python/Pandas  
 **Date:** March 2026  
 **Analyst:** Michael Covelli  
   
