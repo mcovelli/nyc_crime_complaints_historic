@@ -9,16 +9,19 @@ Analysis of NYC Crime trends, Borough comparisons and offense types
 **Tool:** Python/Pandas  
 **Date:** March 2026  
 **Analyst:** Michael Covelli  
+
+*unable to upload dataset to Github due to size limitations*  
+[NYC OpenData](https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/about_data)
   
 1. ### Dataset Overview  
    | Attribute  | Detail  |
    | ---------  | ------- |
    | Source | NYPD Complaint Data Historic (NYC Open Data) |
    | Original Format | CSV |
-   | Imported Format | CSV |
-   | Total Rows | 9.5M |
-   | Total Columns | 35 |
-   | Date Range | January 1, 1989 - December 31, 2024 |
+   | Exported Cleaned Format | parquet |
+   | Total Rows | 9.46M |
+   | Total Columns | 12 |
+   | Date Range | 2006 - 2024 |
    
 2. ### Data Dictionary  
 
@@ -60,10 +63,11 @@ Analysis of NYC Crime trends, Borough comparisons and offense types
 6. ### Important Issues and Resolutions  
    | # | Issue  | Resolution  |
    | --- | ---------  | ------- |
-   | 1 | Incorrect values for VIC_SEX | converted to null values |
-   | 2 | Null values in several columns | converted to null values |
+   | 1 | Incorrect values for VIC_SEX ( D, E, L) | converted to null values |
+   | 2 | Null values in several columns | dropped records with null dates, offense or borough |
    | 3 | values of '(null)' | removed str, converted to null values |
-  x
+   | 4 | dates prior to the year 2006 may be incomplete or incorrect | filtered data prior 2006 for accuracy |  
+  
 8. ### Data Type Corrections
    
    | Column | Original Type  | Corrected Type  |   Reason |
@@ -94,16 +98,14 @@ Analysis of NYC Crime trends, Borough comparisons and offense types
 11. ### Final Dataset Summary  
    | Metric | Value |
    | --- | ---------  |
-   | Total Rows | 9.5M |
-   | Date Range | January 1, 1989 - December 31 - 2024 |
+   | Total Rows | 9.46M |
+   | Date Range | 2026 - 2024 |
    | Validation Checks Passed |  |
    | Import Issues resolved |  |  
   
 11. ### Known Limitations  
-   - Dataset covers January 1, 1989 - December 31, 2024. Data my not reflect current crime statistics.
+   - Years before 2006 may be inaccurate (e.g. 1010), trimmed down to 2006 - 2024
    - Analysis does not include precise location information such as longitude, latitude, station_nm.
    - Approximately 40 - 49% of suspect information such as age, sex and race is missing
 
 *This code is MIT licensed and the dataset is CC BY-SA 4.0*  
-
-[NYC Dataset](https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/about_data)
