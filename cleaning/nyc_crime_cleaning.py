@@ -21,20 +21,19 @@ df['CMPLNT_FR_DT'] = pd.to_datetime(df['CMPLNT_FR_DT'])
 df['CMPLNT_FR_TM'] = pd.to_datetime(df['CMPLNT_FR_TM'], format='%H:%M:%S')
 df['CMPLNT_FR_TM'] = df['CMPLNT_FR_TM'].dt.time
 df['RPT_DT'] = pd.to_datetime(df['RPT_DT'])
-df['Year'] = df['CMPLNT_FR_DT'].dt.year
-
-df = df[df['Year'] >= 2006]
-
-# Check data types of columns
-print(df.dtypes)
 
 # Replace invalid values in VIC_SEX with null
 df['VIC_SEX'] = df['VIC_SEX'].replace({'D': np.nan, 'E': np.nan, 'L': np.nan})
 
-# Check unique values in VIC_SEX
-print(df.tail())
+# Replace invalid values in VIC_SEX with null
+df['VIC_SEX'] = df['VIC_SEX'].replace({'D': np.nan, 'E': np.nan, 'L': np.nan})
+
+# Filter out years before 2006
+df['Year'] = df['CMPLNT_FR_DT'].dt.year
+df = df[df['Year'] >= 2006]
 
 # export clean dataframe to a new CSV
 df.to_parquet('/Users/mike/nyc-crime-ai/nyc_crime_clean.parquet', index=False)
 
+print(f'Cleaned dataset: {df.shape[0]:,} rows, {df.shape[1]} columns')
 print('DONE!')
