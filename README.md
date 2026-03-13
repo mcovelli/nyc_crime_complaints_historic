@@ -11,7 +11,7 @@ Analysis of NYC Crime trends, Borough comparisons and offense types
 **Analyst:** Michael Covelli  
 
 *unable to upload dataset to Github due to size limitations*  
-[NYC OpenData](https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/about_data)
+[https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/about_data](https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i/about_data)
   
 1. ### Dataset Overview  
    | Attribute  | Detail  |
