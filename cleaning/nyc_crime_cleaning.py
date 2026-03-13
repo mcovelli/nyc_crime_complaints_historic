@@ -2,7 +2,10 @@ import pandas as pd
 import numpy as np
 
 # path to data
-path = '/Users/mike/Downloads/data_analyst_cert/nyc_crime_ai/NYPD_Complaint_Data_Historic.csv'
+path = "INSERT YOUR FILE PATH TO DATASET"
+
+# path to export cleaned data
+export_path = "INSERT YOUR FILE PATH TO DATASET"
 
 # 12/35 columns loaded
 cols_to_load = ['CMPLNT_FR_DT', 'CMPLNT_FR_TM', 'RPT_DT', 'OFNS_DESC', 'LAW_CAT_CD', 'BORO_NM', 'SUSP_AGE_GROUP', 'SUSP_RACE', 'SUSP_SEX', 'VIC_AGE_GROUP', 'VIC_RACE', 'VIC_SEX']
@@ -31,4 +34,4 @@ df['VIC_SEX'] = df['VIC_SEX'].replace({'D': np.nan, 'E': np.nan, 'L': np.nan})
 print(df['VIC_SEX'].unique())
 
 # export clean dataframe to a new CSV
-df.to_csv('/Users/mike/Downloads/data_analyst_cert/nyc_crime_ai/nyc_crime_clean.csv', index=False)
+df.to_csv(export_path, index=False)
