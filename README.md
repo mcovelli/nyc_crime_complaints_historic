@@ -42,15 +42,15 @@ Analysis of NYC Crime trends, Borough comparisons and offense types
 4. ### Number of Null values in each column
   | Column | # of Nulls | Resolution |
   | ----- | ------ | ------ |
-  | CMPLNT_FR_DT | 655 | dropped |
-  | CMPLNT_FR_TM | 48 | dropped |
+  | CMPLNT_FR_DT | 655 | dropped nulls |
+  | CMPLNT_FR_TM | 48 | dropped nulls |
   | RPT_DT | 0 | n/a  |
-  | OFNS_DESC | 18894 | dropped |
+  | OFNS_DESC | 18894 | dropped nulls |
   | LAW_CAT_CD | 0 |  n/a |
-  | BORO_NM | 8719 | dropped |
-  | SUSP_AGE_GROUP | 4649568 | kept, filtered out during analysis  |
-  | SUSP_RACE | 3753075 | kept, filtered out during analysis |
-  | SUSP_SEX | 3886446 | kept, filtered out during analysis |
+  | BORO_NM | 8719 | dropped nulls |
+  | SUSP_AGE_GROUP | 4649568 | kept nulls, filtered out during analysis  |
+  | SUSP_RACE | 3753075 | kept nulls, filtered out during analysis |
+  | SUSP_SEX | 3886446 | kept nulls, filtered out during analysis |
   | VIC_AGE_GROUP | 1623568 | kept, filtered out during analysis |
   | VIC_RACE | 760 | dropped  |
   | VIC_SEX | 308 | dropped |  
@@ -58,10 +58,13 @@ Analysis of NYC Crime trends, Borough comparisons and offense types
   *Approximately 40 - 49% of suspect information such as age, sex and race is missing which indicates the suspect wasn't found or no arrests had been made.  
   
 6. ### Important Issues and Resolutions  
-   | # | Issue  | Resolution  |   Outcome |
-   | --- | ---------  | ------- | -------- |
-  
-7. ### Data Type Corrections
+   | # | Issue  | Resolution  |
+   | --- | ---------  | ------- |
+   | 1 | Incorrect values for VIC_SEX | converted to null values |
+   | 2 | Null values in several columns | converted to null values |
+   | 3 | values of '(null)' | removed str, converted to null values |
+  x
+8. ### Data Type Corrections
    
    | Column | Original Type  | Corrected Type  |   Reason |
    | --- | ---------  | ------- | -------- |
